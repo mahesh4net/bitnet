@@ -318,3 +318,36 @@ transform: translateY(5px);
   transform: translateY(4px);
 }
 
+.signup-button:disabled{
+  cursor: not-allowed;
+  box-shadow: 0 2px #215c24;
+  opacity: 0.5;
+}
+
+.error{
+  font-size: 13px;
+  color: rgb(255, 0, 0);
+  font-weight: 500;
+}
+.success{
+  font-size: 13px;
+  color: rgb(1, 224, 50);
+  font-weight: 500;
+
+}
+
+
+.loader{
+  aspect-ratio: 1/1;
+  color: transparent;
+  border-radius: 50%;
+  border-right-color: transparent !important;
+  animation: rotate 1s ease-in-out infinite;
+  margin-inline: auto;
+}
+
+@keyframes rotate {
+  to{
+    transform: rotate(360deg);
+  }
+}
