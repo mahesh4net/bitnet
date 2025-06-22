@@ -344,10 +344,18 @@ transform: translateY(5px);
   border-right-color: transparent !important;
   animation: rotate 1s ease-in-out infinite;
   margin-inline: auto;
+  margin-block: auto;
 }
 
 @keyframes rotate {
   to{
     transform: rotate(360deg);
   }
+}
+
+.protected-container{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

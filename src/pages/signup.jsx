@@ -11,7 +11,6 @@ export default function Signup() {
   });
 
   const [errors, setErrors] = useState({});
-  const [message, setMessage] = useState("");
   const [status, setStatus] = useState(null)
   const navigate = useNavigate()
 
@@ -22,7 +21,6 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors({});
-    setMessage("");
     setStatus('loading')
     
     try {

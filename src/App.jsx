@@ -9,6 +9,7 @@ import Login from "./pages/login";
 import Signup from "./pages/signup";
 import "./index.css";
 import Header from "./component/header";
+import ProtectedRoute from "./pages/protectedRoute";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute> }>
             <Route index element={<Profile />} />
             <Route path="analytics" element={<Analytics />} />
             <Route path="shortlink" element={<Shortlink />} />
