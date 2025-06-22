@@ -10,6 +10,7 @@ import Signup from "./pages/signup";
 import "./index.css";
 import Header from "./component/header";
 import ProtectedRoute from "./pages/protectedRoute";
+import NotFound from "./pages/notFound";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
     </>

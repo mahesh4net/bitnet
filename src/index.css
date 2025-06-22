@@ -12,7 +12,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root{
+#root {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -28,11 +28,38 @@ body {
   color: #1a1a1a; /* Optional: nice readable text */
 }
 
+.primary-btn {
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  width: 100%;
+  padding-block: 15px;
+  padding-inline: 25px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgb(23, 146, 29);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.363);
+  transition: 0.3s ease-in-out;
+}
+
+.primary-btn:hover {
+  cursor: pointer;
+  background-color: rgb(12, 126, 17);
+}
+
+.primary-btn:active {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.363);
+  transform: translateY(3px);
+}
 /* Home page styling */
 
 .navbar-container {
   width: 100%;
-  padding-block: 15px;
+  padding-block: 20px;
   padding-inline: 20px;
   background-color: black;
   color: white;
@@ -41,6 +68,7 @@ body {
   align-items: center;
   top: 0;
   left: 0;
+  max-height: 62px;
 }
 
 .nav-logo a {
@@ -63,43 +91,35 @@ body {
 
 .login-btn {
   text-decoration: none;
-  padding: 5px 15px;
-  border-radius: 2px;
-  color: white;
-  font-weight: bold;
-  background-color: rgb(23, 146, 29);
-  border-bottom: 5px solid rgba(0, 0, 0, 0.363);
-  transition: 0.5s ease-in-out;
+  padding-block: 8px !important;
 }
 
-.login-btn:hover {
-   background-color: rgb(13, 133, 19);
-
-}
-
-.login-btn:active{
-  border-bottom: 5px solid rgba(86, 109, 86, 0);
-transform: translateY(5px);
-}
 .signup-btn {
   text-decoration: none;
-  padding: 5px 15px;
-  border-radius: 5px;
-  color: white;
+  padding-block: 8px !important;
+}
+
+.header-profile-avatar {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
   font-weight: bold;
-  background-color: rgb(23, 146, 29);
-  border-bottom: 5px solid rgba(0, 0, 0, 0.363);
-  transition: 0.5s ease-in-out;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
 }
 
-.signup-btn:hover {
-    background-color: rgb(13, 133, 19);
-
+.header-profile-avatar:hover {
+  cursor: pointer;
+  outline: 5px solid rgba(255, 255, 255, 0.329);
 }
-
-.signup-btn:active{
-  border-bottom: 5px solid rgba(86, 109, 86, 0);
-transform: translateY(5px);
+.header-profile-avatar:active {
+  transition: all 0.2s ease-in;
+  outline: 15px solid rgba(255, 255, 255, 0.329);
 }
 
 .home-banner {
@@ -109,7 +129,6 @@ transform: translateY(5px);
   justify-content: center;
   align-items: center;
   gap: 20px;
-
 }
 
 .home-banner h1 {
@@ -118,29 +137,8 @@ transform: translateY(5px);
 }
 
 .home-banner a {
-  text-decoration: none;
-  padding: 14px 60px;
-  background-color: #46b449;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 6px #388e3c;
-  transition: all 0.2s ease;
-}
-
-
-
-
-.home-banner a:hover {
-  background-color: #34a53a;
-}
-
-.home-banner a:active {
-  box-shadow: 0 2px #2e7d32;
-  transform: translateY(4px);
+  padding-inline: 40px;
+  max-width: fit-content;
 }
 
 /* dashboard styling */
@@ -185,46 +183,18 @@ transform: translateY(5px);
   border-bottom: 2px solid rgba(0, 0, 0, 0.11);
 }
 
-
-.logout-btn{
+.logout-btn {
   width: 100%;
- padding-inline: 20px;
- padding-bottom: 15px;
-display: flex;
-justify-content: space-between;
-justify-content: center;
-}
-
-
-
-.logout-btn button{
-  border: none;
-  background-color: transparent;
-  color: rgb(255, 255, 255);
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 1px;
-  width: 100%;
-   padding-block: 15px;
-   border-radius: 10px;
-  background-color: rgb(23, 146, 29);
-  border-bottom: 5px solid rgba(0, 0, 0, 0.363);
-  transition: 0.5s ease-in-out;
-}
-
-.logout-btn button:hover{
-  cursor: pointer;
-  background-color: rgb(12, 126, 17);
-}
-
-.logout-btn button:active{
-border-bottom: none;
-transform: translateY(5px);
-
-}
-
-.outlet{
+  padding-inline: 20px;
+  padding-bottom: 15px;
   display: flex;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+.outlet {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -233,7 +203,6 @@ transform: translateY(5px);
 
 /* signup page styling */
 .signup-container {
- 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -284,60 +253,35 @@ transform: translateY(5px);
   -webkit-text-fill-color: rgb(68, 67, 67);
 }
 
-.form-group input::-webkit-input-placeholder{
+.form-group input::-webkit-input-placeholder {
   -webkit-text-fill-color: rgb(122, 120, 120);
-
 }
 
 .form-group input:focus {
   outline: none;
-  border: 2px solid #4CAF50;
+  border: 2px solid #4caf50;
 }
 
 /* 3D Button */
-.signup-button {
-  width: 100%;
-  padding: 14px;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 6px #388e3c;
-  transition: all 0.2s ease;
-}
 
-.signup-button:hover {
-  background-color: #45a049;
-}
-
-.signup-button:active {
-  box-shadow: 0 2px #2e7d32;
-  transform: translateY(4px);
-}
-
-.signup-button:disabled{
+.signup-button:disabled {
   cursor: not-allowed;
   box-shadow: 0 2px #215c24;
   opacity: 0.5;
 }
 
-.error{
+.error {
   font-size: 13px;
   color: rgb(255, 0, 0);
   font-weight: 500;
 }
-.success{
+.success {
   font-size: 13px;
   color: rgb(1, 224, 50);
   font-weight: 500;
-
 }
 
-
-.loader{
+.loader {
   aspect-ratio: 1/1;
   color: transparent;
   border-radius: 50%;
@@ -348,14 +292,114 @@ transform: translateY(5px);
 }
 
 @keyframes rotate {
-  to{
+  to {
     transform: rotate(360deg);
   }
 }
 
-.protected-container{
+.protected-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* 404 page */
+
+.notfound-container {
+  height: 100vh;
+  background-color: #f0fff0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.notfound-container h1 {
+  font-size: 6rem;
+  color: #28a745;
+  margin: 0;
+  text-shadow: 2px 2px 10px rgba(0, 128, 0, 0.4);
+}
+
+.notfound-container p {
+  font-size: 1.5rem;
+  margin: 10px 0 30px;
+  color: #2e7d32;
+}
+
+.home-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px #1e7e34;
+  transition: all 0.2s ease;
+}
+
+.home-button:hover {
+  background-color: #218838;
+}
+
+.home-button:active {
+  box-shadow: 0 2px #1e7e34;
+  transform: translateY(3px);
+}
+
+/* profile page styling */
+/* Profile Page Dark Theme Styling */
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.profile-card {
+  color: rgb(31, 31, 31);
+  padding: 30px;
+  text-align: center;
+}
+
+.profile-avatar {
+  background-color: #131b27;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-fullname {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.profile-username {
+  font-size: 14px;
+  color: rgb(36, 36, 36);
+
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.profile-info p {
+  margin: 6px 0;
+  font-size: 14px;
 }

@@ -113,9 +113,9 @@ export default function Signup() {
           {errors.password && <p className="error">{errors.password}</p>}
         </div>
 
-        <button type="submit" className="signup-button" disabled={status === 'loading' || status === 'success'}
+        <button type="submit" className="signup-button primary-btn" disabled={status === 'loading' || status === 'success'}
 >
-          {status === 'loading' ? <Loader size={20} color={'white'} thickness={3}/> : status === 'success' ? 'redirecting to login..' : 'Create Account'}
+          {status === 'loading' ? <Loader size={15} color={'white'} thickness={3}/> : status === 'success' ? 'redirecting to login..' : 'Create Account'}
         </button>
 
       </form>

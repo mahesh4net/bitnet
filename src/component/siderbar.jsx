@@ -1,7 +1,10 @@
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { resetUserDetails } from "../../globalstate/userSlice";
 
 export default function Sidebar() {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   async function LogOut() {
     try {
       const res = await fetch("http://localhost:5000/auth/logout", {
@@ -10,6 +13,7 @@ export default function Sidebar() {
       });
 
       if (res.ok) {
+        dispatch(resetUserDetails())
         navigate("/login");
       } else {
         alert("error loging out !");
@@ -36,7 +40,7 @@ export default function Sidebar() {
         </ul>
         <ul>
           <li className="logout-btn">
-            <button onClick={LogOut}>LogOut</button>
+            <button onClick={LogOut} className="primary-btn">LogOut</button>
           </li>
         </ul>
       </div>

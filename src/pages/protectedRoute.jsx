@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Loader from "../component/loader";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserDetails } from "../../globalstate/userSlice";
 
 export default function ProtectedRoute({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const {isAuthenticated} = useSelector(state => state.user)
   const navigate = useNavigate();
-
+  const dispatch = useDispatch()
   useEffect(() => {
     async function Authenticate() {
       try {
@@ -18,12 +20,12 @@ export default function ProtectedRoute({ children }) {
         const data = await res.json()
 
         if (res.ok) {
-          setIsAuthenticated(true);
+          dispatch(setUserDetails(data.decoded))
         } else {
-          setIsAuthenticated(false);
           navigate("/login");
         }
       } catch (err) {
+        console.log(err)
         alert(err);
 
       }
@@ -31,7 +33,7 @@ export default function ProtectedRoute({ children }) {
     if(!isAuthenticated){
     Authenticate();
     }
-  }, [navigate, isAuthenticated]);
+  }, [navigate, isAuthenticated, dispatch]);
 
   if (!isAuthenticated) {
     return (

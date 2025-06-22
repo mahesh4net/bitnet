@@ -90,11 +90,11 @@ export default function Login() {
 
         <button
           type="submit"
-          className="signup-button"
+          className="signup-button primary-btn"
           disabled={status == "loading" || status == "success"}
         >
           {status === "loading" ? (
-            <Loader size={20} color={"white"} thickness={3} />
+            <Loader size={15} color={"white"} thickness={3} />
           ) : status === "success" ? (
             "redirecting to dashboard.."
           ) : (
