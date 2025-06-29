@@ -31,7 +31,7 @@ export default function Profile() {
           <p><strong>Username:</strong> {username}</p>
           <p><strong>Email:</strong> {email}</p>
         </div>
-        <button className="profile-logout-button primary-btn" onClick={handleLogout}>Logout</button>
+        <button className="profile-logout-button secondary-btn" onClick={handleLogout}>Logout</button>
       </div>
     </div>
   );

@@ -28,7 +28,43 @@ body {
   color: #1a1a1a; /* Optional: nice readable text */
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: none;
+  -webkit-text-fill-color: none; /* set text color you want */
+  transition: none;
+}
+
 .primary-btn {
+  text-decoration: none;
+  border: none;
+  background-color: rgb(23, 146, 29);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  width: 100%;
+  padding-block: 15px;
+  padding-inline: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 6px 0 rgb(14, 66, 12);
+  transition: all 0.1s ease-in-out;
+}
+
+.primary-btn:hover {
+  cursor: pointer;
+  background-color: rgb(12, 126, 17);
+}
+
+.primary-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 rgb(11, 53, 10);
+}
+
+.secondary-btn {
   text-decoration: none;
   border: none;
   background-color: transparent;
@@ -41,17 +77,17 @@ body {
   padding-inline: 25px;
   border-radius: 10px;
   text-align: center;
-  background-color: rgb(23, 146, 29);
+  background-color: rgb(146, 23, 23);
   border-bottom: 5px solid rgba(0, 0, 0, 0.363);
   transition: 0.3s ease-in-out;
 }
 
-.primary-btn:hover {
+.secondary-btn:hover {
   cursor: pointer;
-  background-color: rgb(12, 126, 17);
+  background-color: rgb(126, 12, 12);
 }
 
-.primary-btn:active {
+.secondary-btn:active {
   border-bottom: 2px solid rgba(0, 0, 0, 0.363);
   transform: translateY(3px);
 }
@@ -152,7 +188,7 @@ body {
 .sidebar-container {
   width: 20%;
   min-height: 100%;
-  background-color: rgb(78, 175, 69);
+  background-color: rgb(230, 230, 230);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -171,12 +207,12 @@ body {
 }
 
 .sidebar-container ul li a:hover {
-  background-color: rgb(61, 170, 39);
+  background-color: rgb(207, 207, 207);
 }
 
 .sidebar-container ul li a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(29, 29, 29);
   display: block;
   padding-block: 15px;
   padding-inline: 20px;
@@ -254,7 +290,7 @@ body {
 }
 
 .form-group input::-webkit-input-placeholder {
-  -webkit-text-fill-color: rgb(122, 120, 120);
+  -webkit-text-fill-color: rgba(134, 132, 132, 0.719);
 }
 
 .form-group input:focus {
@@ -402,4 +438,84 @@ body {
 .profile-info p {
   margin: 6px 0;
   font-size: 14px;
+}
+
+/*short link page*/
+.url-shortener-container {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.096);
+  border-radius: 5px;
+}
+
+.shorten-form-title {
+  color: black;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.url-form {
+  width: 100%;
+}
+
+.url-form-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  text-align: left;
+  align-self: flex-start;
+  width: 100%;
+  font-size: 13px;
+}
+
+.url-form-input {
+  width: 100%;
+  padding: 14px 40px 14px 14px !important;
+ 
+}
+
+
+
+.url-form-input-box {
+  position: relative;
+}
+
+.actions {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.copy-btn{
+  padding: 5px 10px;
+  color: rgb(0, 0, 0);
+  border-radius: 2px;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.copy-btn:hover{
+  cursor: pointer;
+}
+
+.url-form-error{
+  text-align: left;
 }

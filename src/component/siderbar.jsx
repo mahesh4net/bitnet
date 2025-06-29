@@ -40,7 +40,7 @@ export default function Sidebar() {
         </ul>
         <ul>
           <li className="logout-btn">
-            <button onClick={LogOut} className="primary-btn">LogOut</button>
+            <button onClick={LogOut} className="secondary-btn">LogOut</button>
           </li>
         </ul>
       </div>
